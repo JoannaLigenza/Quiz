@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title> Quiz</title>
+		<meta name="description" content="  "/>
+		<link rel="stylesheet" href="style.css"/>
+		<script src="halloween.json"></script>
+		<script src="christmass.json"></script>
+		<script src="script.js"></script> 
+    </head>
+    <body> 
+		<div id="container">
+			<div id="content">
+			
+				<div class="card active" id="hello">
+
+					<h2>Witaj! </h2>
+					<p>Zasady quizu</p>
+					<form>
+						What's your name? <br>
+						<input type="text" name="name"><br><br>
+						Choose category: <br>
+						<select id="category">
+							  <option value="halloween">Halloween</option>
+							  <option value="christmass">Christmass</option>
+						</select> <br><br>
+						<button type="button" name="next" id="button">Next</button><br><br>
+					</form>
+				</div>
+				
+				<div id="question1" class="card question">
+					
+				</div>
+				
+			</div>
+		</div>
+    </body>
+</html>
