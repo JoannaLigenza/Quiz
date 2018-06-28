@@ -2,26 +2,48 @@
 document.addEventListener('DOMContentLoaded', function() {
 	
 	const content = document.getElementById("content");
+	const name = document.getElementById("name");
+	const options = document.getElementsByTagName("option");
 	const active = document.querySelector(".active");
 	const all_question_cards =  document.getElementsByClassName("question");
 	const hello_card = document.getElementById("hello");
 	const next_button_in_hello_card = document.getElementById("button");
 	const next_button_in_question_card = document.getElementsByClassName("button");
+	const question_number = 5;
 	const score = [];
 	//const category = document.getElementById("category");
 	
 	 
 	
 	const start_quiz = {
+		category: "deflaut",
+		
+		get_name: function() {
+			const read_name = name.value;
+			return read_name;
+		},
+		
+		get_category: function() {
+			for (i=0; i < options.length; i++) {
+				if (options[i].selected) {
+					category = options[i].value
+				}
+			}
+			return category;
+		},
+		
 		change_card: function() {
 			next_button_in_hello_card.addEventListener("click", function() {
 				//hello_card.style.zIndex = 0;
 				//question_card_1.style.zIndex = 2;
+				const read_category = start_quiz.get_category();
+				read_status_and_parse_json(read_category);
 				active.nextElementSibling.classList.add("active");
 				active.classList.remove("active");
-			} )	
+			} )
 		}
 	}
+	
 	
 /*	function loadJSON(callback) {   
 
@@ -46,26 +68,30 @@ document.addEventListener('DOMContentLoaded', function() {
 	} */
 	
 	
-	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.onreadystatechange = function() {
-	//console.log(this.readyState)
-		if (this.readyState == 4 && this.status == 200) {
-			var myObj = JSON.parse(this.responseText);
-			//document.getElementById("demo").innerHTML = myObj.name;
-			//console.log(myObj[0].text);
-			add_questions_and_answers(myObj);
-			return myObj;
-			//mojObiekt.dodaj.myObj - prototype
-		}
-	};
-		
-	xmlhttp.open("GET", "./halloween.json", true);
-	xmlhttp.send();
-	//console.log("response: ", xmlhttp.onreadystatechange());
+	function read_status_and_parse_json(read_category) { 
+	
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+		//console.log(this.readyState)
+			if (this.readyState == 4 && this.status == 200) {
+				var myObj = JSON.parse(this.responseText);
+				//document.getElementById("demo").innerHTML = myObj.name;
+				//console.log(myObj[0].text);
+				add_questions_and_answers(myObj);
+				return myObj;
+				//mojObiekt.dodaj.myObj - prototype
+			}
+		};
+			
+		//xmlhttp.open("GET", "./halloween.json", true);	
+		xmlhttp.open("GET", "./" + read_category + ".json", true);
+		xmlhttp.send();
+		//console.log("response: ", xmlhttp.onreadystatechange());
+	}
 	
 	function add_cards() {
 		const cards_array = [all_question_cards[0]];
-		for (let i=2; i <= 5; i++) {
+		for (let i=2; i <= question_number; i++) {
 			const card = document.createElement("div");
 			card.id = "question"+i;
 			card.classList.add("card");
@@ -78,9 +104,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	
 	
 	function random_question(arr) {
-		const questions = arr
-		const random = Math.floor(Math.random() * (questions.length-1));
-		questions.splice(random, 1);
+		let questions = arr.length
+		const random = Math.floor(Math.random() * (questions-1));
+		questions -= 1; 
+		//console.log(questions);
+		//console.log(random);
 		return random;
 	}
 	
@@ -125,11 +153,14 @@ document.addEventListener('DOMContentLoaded', function() {
 			}
 			cards[i].appendChild(check_answer_button);
 			cards[i].appendChild(next_button);
+			//arr.splice(question_number, 1);
+			//console.log("arr: " , arr);
 			next_button.disabled = true;
 			//console.log(all_list_elements[0].childNodes[1].innerText);
 			//console.log(arr[question_number]);
 			check_answers(card_list_elements, arr[question_number], check_answer_button, next_button);
-			switch_card(next_button)
+			switch_card(next_button);
+			arr.splice(question_number, 1);
 		}
 		add_score_card();
 	}
@@ -146,6 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					if (list_element[i].childNodes[0].childNodes[0].checked && list_element[i].childNodes[0].innerText != question.correct) {	
 						console.log("blad");
 						list_element[i].classList.add("bad_answer");
+						console.log(question.choices )
 					}
 					if (list_element[i].childNodes[0].childNodes[0].checked === false) {
 						all_checkbox.push(i);
@@ -167,31 +199,8 @@ document.addEventListener('DOMContentLoaded', function() {
 			} )
 	};
 	
-/*	function check_answers(list_element, question, check_answer_button, next_button) {
-			check_answer_button.addEventListener("click", function() {
-				for (i=0; i < list_element.length; i++) {
-					if (list_element[i].childNodes[0].checked && list_element[i].childNodes[1].innerText == question.correct) {	
-						console.log("yupi!");
-						score.push(1);	
-						list_element[i].classList.add("correct_answer");					
-					}
-					if (list_element[i].childNodes[0].checked && list_element[i].childNodes[1].innerText != question.correct) {	
-						console.log("blad");
-						list_element[i].classList.add("bad_answer");
-					}
-				}
-				for (i=0; i < list_element.length; i++) {
-					list_element[i].childNodes[0].disabled = true;
-				}
-				next_button.disabled = false;
-				check_answer_button.disabled = true;
-				console.log(score);
-			} )
-	}; */
-	
 	function switch_card(next_button) {
 		next_button.addEventListener("click", function() {
-			
 			document.querySelector(".active").nextElementSibling.classList.add("active");
 			document.querySelector(".active").classList.remove("active");
 		})
@@ -207,9 +216,10 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 	
 	function add_score_to_score_card(score) {
+		const set_name = start_quiz.get_name();
 		const get_score_card = document.getElementById("score");
 		const score_header = document.createElement("h2");
-		score_header.innerText = "Your score: " + score.length;
+		score_header.innerText = set_name + ", your score: " + score.length + " / " + all_question_cards.length;
 		get_score_card.appendChild(score_header);
 	}
 	
