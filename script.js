@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	const hello_card = document.getElementById("hello");
 	const next_button_in_hello_card = document.getElementById("button");
 	const next_button_in_question_card = document.getElementsByClassName("button");
+	const score = [];
 	//const category = document.getElementById("category");
 	
 	 
@@ -64,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	
 	function add_cards() {
 		const cards_array = [all_question_cards[0]];
-		for (let i=2; i <= 20; i++) {
+		for (let i=2; i <= 5; i++) {
 			const card = document.createElement("div");
 			card.id = "question"+i;
 			card.classList.add("card");
@@ -88,15 +89,19 @@ document.addEventListener('DOMContentLoaded', function() {
 		const cards = add_cards();
 		for (i=0; i < cards.length; i++) {
 			const question_number = random_question(arr);
-			//console.log(cards.length);
-			//console.log(question_number);
 			const next_button= document.createElement("button");
-			next_button.innerText = "Next";
-			next_button.classList.add("button");
-			next_button.id = i;
+			const check_answer_button = document.createElement("button");
 			const header = document.createElement("h2");
 			const paragraph = document.createElement("p");
 			const ul_list = document.createElement("ul");
+			const card_list_elements = [];
+			const card_inputs = [];
+			next_button.innerText = "Next";
+			next_button.classList.add("button");
+			next_button.id = i;
+			check_answer_button.innerText = "Check Answer";
+			check_answer_button.classList.add("check-answer-button");
+			check_answer_button.id = i;
 			paragraph.classList.add("answers-paragraph");
 			header.innerText = arr[question_number].text
 			cards[i].appendChild(header);
@@ -110,31 +115,102 @@ document.addEventListener('DOMContentLoaded', function() {
 				answer.name = "answer";
 				answer.id = i;
 				const for_label = label.setAttribute("for", i);
-				//for_label = i;
 				label.innerText = arr[question_number].choices[i];
 				ul_list.appendChild(li);
-				li.appendChild(answer);
+				//li.appendChild(answer);
 				li.appendChild(label);
-				//answer.appendChild(label); 
+				label.insertBefore(answer, label.childNodes[0]);
+				card_list_elements.push(li);
+				card_inputs.push(answer);
 			}
+			cards[i].appendChild(check_answer_button);
 			cards[i].appendChild(next_button);
+			next_button.disabled = true;
+			//console.log(all_list_elements[0].childNodes[1].innerText);
+			//console.log(arr[question_number]);
+			check_answers(card_list_elements, arr[question_number], check_answer_button, next_button);
 			switch_card(next_button)
 		}
 		add_score_card();
 	}
 	
-	function add_score_card() {
-		const score = document.createElement("div");
-		score.id = "score";
-		score.classList.add("card");
-		content.appendChild(score);
-	}
+	function check_answers(list_element, question, check_answer_button, next_button) {
+			check_answer_button.addEventListener("click", function(e) {
+				const all_checkbox = [];
+				for (i=0; i < list_element.length; i++) {
+					if (list_element[i].childNodes[0].childNodes[0].checked && list_element[i].childNodes[0].innerText == question.correct) {	
+						console.log("yupi!");
+						score.push(1);	
+						list_element[i].classList.add("correct_answer");					
+					}
+					if (list_element[i].childNodes[0].childNodes[0].checked && list_element[i].childNodes[0].innerText != question.correct) {	
+						console.log("blad");
+						list_element[i].classList.add("bad_answer");
+					}
+					if (list_element[i].childNodes[0].childNodes[0].checked === false) {
+						all_checkbox.push(i);
+					}
+				}
+				if (all_checkbox.length == 4) {
+					return;
+				}
+				for (i=0; i < list_element.length; i++) {
+					list_element[i].childNodes[0].childNodes[0].disabled = true;
+				}
+				if (e.target.id == next_button_in_question_card.length-1) {
+					console.log("bingo!");
+					add_score_to_score_card(score);
+				}
+				next_button.disabled = false;
+				check_answer_button.disabled = true;
+				console.log("sore: " , score);
+			} )
+	};
+	
+/*	function check_answers(list_element, question, check_answer_button, next_button) {
+			check_answer_button.addEventListener("click", function() {
+				for (i=0; i < list_element.length; i++) {
+					if (list_element[i].childNodes[0].checked && list_element[i].childNodes[1].innerText == question.correct) {	
+						console.log("yupi!");
+						score.push(1);	
+						list_element[i].classList.add("correct_answer");					
+					}
+					if (list_element[i].childNodes[0].checked && list_element[i].childNodes[1].innerText != question.correct) {	
+						console.log("blad");
+						list_element[i].classList.add("bad_answer");
+					}
+				}
+				for (i=0; i < list_element.length; i++) {
+					list_element[i].childNodes[0].disabled = true;
+				}
+				next_button.disabled = false;
+				check_answer_button.disabled = true;
+				console.log(score);
+			} )
+	}; */
 	
 	function switch_card(next_button) {
 		next_button.addEventListener("click", function() {
+			
 			document.querySelector(".active").nextElementSibling.classList.add("active");
 			document.querySelector(".active").classList.remove("active");
 		})
+	}
+	
+	function add_score_card() {
+		const score_card = document.createElement("div");
+		score_card.id = "score";
+		score_card.classList.add("card");
+		content.appendChild(score_card);
+		//add_score_to_score_card(score_card)
+		return score_card
+	}
+	
+	function add_score_to_score_card(score) {
+		const get_score_card = document.getElementById("score");
+		const score_header = document.createElement("h2");
+		score_header.innerText = "Your score: " + score.length;
+		get_score_card.appendChild(score_header);
 	}
 	
 	start_quiz.change_card();
