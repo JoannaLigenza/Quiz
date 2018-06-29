@@ -87,6 +87,10 @@ input[name="answer"] {
 	font-weight: bold;
 }
 
+#score_div {
+	border: 1px solid black;
+}
+
 @media screen and (max-width: 1000px) {
 	.card {
 		left: 15%;

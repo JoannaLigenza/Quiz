@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			}
 			return category;
 		},
-		
+		// switch first card with category choice to second card with first question
 		change_card: function() {
 			next_button_in_hello_card.addEventListener("click", function() {
 				const read_category = start_quiz.get_category();
@@ -40,53 +40,26 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 	
 	
-/*	function loadJSON(callback) {   
-
-		var xobj = new XMLHttpRequest();
-			xobj.overrideMimeType("application/json");
-		xobj.open('GET', './halloween.json', true); // Replace 'my_data' with the path to your file
-		xobj.onreadystatechange = function () {
-			  if (xobj.readyState == 4 && xobj.status == "200") {
-				// Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-				callback(xobj.responseText);
-			  }
-		};
-		xobj.send(null);  
-	}
-	
-	function init() {
-	 loadJSON(function(response) {
-	  // Parse JSON string into object
-		var actual_JSON = JSON.parse(response);
-		console.log(actual_JSON);
-	 });
-	} */
-	
-	
 	const solve_quiz = {
-	
+
 		read_status_and_parse_json: function(read_category) { 
-		
 			var xmlhttp = new XMLHttpRequest();
 			xmlhttp.onreadystatechange = function() {
-			//console.log(this.readyState)
 				if (this.readyState == 4 && this.status == 200) {
 					var myObj = JSON.parse(this.responseText);
 					solve_quiz.add_questions_and_answers(myObj);
 				}
 			};
-				
-			//xmlhttp.open("GET", "./halloween.json", true);	
+					
 			xmlhttp.open("GET", "./" + read_category + ".json", true);
 			xmlhttp.send();
-			//console.log("response: ", xmlhttp.onreadystatechange());
 		},
-		
+
 		add_questions_and_answers: function(arr) {
-			const cards = solve_quiz.add_cards();
+			const cards = solve_quiz.add_question_cards();
 			for (i=0; i < cards.length; i++) {
 				const number_of_question = solve_quiz.random_question(arr);
-				const next_button= document.createElement("button");
+				const next_button = document.createElement("button");
 				const check_answer_button = document.createElement("button");
 				const header = document.createElement("h2");
 				const paragraph = document.createElement("p");
@@ -121,15 +94,15 @@ document.addEventListener('DOMContentLoaded', function() {
 				}
 				cards[i].appendChild(check_answer_button);
 				cards[i].appendChild(next_button);
-				next_button.disabled = true;
+
 				solve_quiz.check_answers(card_list_elements, arr[number_of_question], check_answer_button, next_button);
-				solve_quiz.switch_card(next_button);
+				solve_quiz.switch_question_card_and_count_score(card_list_elements, arr[number_of_question], next_button);
 				arr.splice(number_of_question, 1);
 			}
 			set_score.add_score_card();
 		},
 		
-		add_cards: function () {
+		add_question_cards: function () {
 			const cards_array = [all_question_cards[0]];
 			for (let i=2; i <= questions_number; i++) {
 				const card = document.createElement("div");
@@ -142,7 +115,6 @@ document.addEventListener('DOMContentLoaded', function() {
 			return cards_array;
 		},
 		
-		
 		random_question: function(arr) {
 			let questions = arr.length
 			const random = Math.floor(Math.random() * (questions-1));
@@ -150,45 +122,55 @@ document.addEventListener('DOMContentLoaded', function() {
 			return random;
 		},
 		
-		
-		check_answers: function(list_element, question, check_answer_button, next_button) {
+		check_answers: function(list_element, question, check_answer_button) {
 				check_answer_button.addEventListener("click", function(e) {
 					const all_checkbox = [];
 					for (i=0; i < list_element.length; i++) {
 						if (list_element[i].childNodes[0].childNodes[0].checked && list_element[i].childNodes[0].innerText == question.correct) {	
-							console.log("yupi!");
-							score.push(1);	
-							list_element[i].classList.add("correct_answer");					
+							list_element[i].classList.add("correct_answer");				
 						}
 						if (list_element[i].childNodes[0].childNodes[0].checked && list_element[i].childNodes[0].innerText != question.correct) {	
-							console.log("blad");
 							list_element[i].classList.add("bad_answer");
-							console.log(question.choices )
 						}
 						if (list_element[i].childNodes[0].childNodes[0].checked === false) {
 							all_checkbox.push(i);
 						}
 					}
+					// if none of answers is checked
 					if (all_checkbox.length == 4) {
 						return;
 					}
+					// block all answers and check_answer_button
 					for (i=0; i < list_element.length; i++) {
 						list_element[i].childNodes[0].childNodes[0].disabled = true;
 					}
-					if (e.target.id == next_button_in_question_card.length-1) {
-						console.log("bingo!");
-						set_score.add_score_to_score_card(score);
-					}
-					next_button.disabled = false;
 					check_answer_button.disabled = true;
-					console.log("sore: " , score);
 				} )
 		},
 		
-		switch_card: function(next_button) {
-			next_button.addEventListener("click", function() {
+		switch_question_card_and_count_score: function(list_element, question, next_button) {
+			next_button.addEventListener("click", function(e) {
+				const all_checkbox = [];
+				for (i=0; i < list_element.length; i++) {
+					if (list_element[i].childNodes[0].childNodes[0].checked && list_element[i].childNodes[0].innerText == question.correct) {	
+						score.push(1);					
+					}
+					if (list_element[i].childNodes[0].childNodes[0].checked === false) {
+						all_checkbox.push(i);
+					}
+				}
+				// if none of answers is checked
+				if (all_checkbox.length == 4) {
+					return;
+				}
+				// add score count to score card
+				if (e.target.id == next_button_in_question_card.length-1) {
+					set_score.add_score_to_score_card(score);
+				}
+				// swith question card
 				document.querySelector(".active").nextElementSibling.classList.add("active");
 				document.querySelector(".active").classList.remove("active");
+				
 			})
 		}
 	}
@@ -206,9 +188,12 @@ document.addEventListener('DOMContentLoaded', function() {
 		add_score_to_score_card: function(score) {
 			const set_name = start_quiz.get_name();
 			const get_score_card = document.getElementById("score");
+			const score_div = document.createElement("div");
 			const score_header = document.createElement("h2");
+			score_div.id = "score_div";
 			score_header.innerText = set_name + ", your score: " + score.length + " / " + all_question_cards.length;
-			get_score_card.appendChild(score_header);
+			get_score_card.appendChild(score_div);
+			score_div.appendChild(score_header);
 		}
 	}
 	
