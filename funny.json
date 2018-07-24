@@ -1,0 +1,218 @@
+[
+	{
+		"text": "Gdzie są rzeki bez wody?",
+		"choices": ["Na mapach, globusach i obrazkach", "W Afryce. Wyschnięte koryta rzek", "Gdzieś w Europie"],
+		"correct": "Na mapach, globusach i obrazkach"
+	},
+	{
+		"text": "Co robi wartownik, gdy na jego czapce siedzi wróbel?",
+		"choices": ["Śpi", "Próbuje złapać wróbla", "Nic, po prostu sobie chodzi"],
+		"correct": "Śpi"
+	},
+	{
+		"text": "Jaki koń widzi tak samo z przodu i z tyłu?",
+		"choices": ["W okularach", "Ślepy", "Spostrzegawczy"],
+		"correct": "Ślepy"
+	},
+	{
+		"text": "Który miesiąc ma 28 dni?",
+		"choices": ["Żaden", "Luty", "Każdy"],
+		"correct": "Każdy"
+	},
+	{
+		"text": "Jak najlepiej stracić na wadze?",
+		"choices": ["Zdrowo jeść", "Kupić wagę drogo i sprzedać tanio", "Zepsuć wagę"],
+		"correct": "Kupić wagę drogo i sprzedać tanio"
+	},
+	{
+		"text": "Co się nie pali, a trzeba to gasić?",
+		"choices": ["Zimne ognie", "Pragnienie", "Zapalniczka"],
+		"correct": "Pragnienie"
+	},
+	{
+		"text": "Które koło najmniej się zużywa na zakrętach?",
+		"choices": ["Prawe przednie", "Lewe tylne", "Zapasowe"],
+		"correct": "Zapasowe"
+	},
+	{
+		"text": "Jaki kolor jest najbardziej wystrzałowy?",
+		"choices": ["Granat", "Czerń", "Czerwień"],
+		"correct": "Granat"
+	},
+	{
+		"text": "Czym się różni słoń od parawanu?",
+		"choices": ["Parawanem można się zasłonić, a słoniem nie można się zaparawanić", "Bo za parawanem można się zasłonić, a za słoniem nie", "Bo za słoniem nie można się schować, a za parawanem można"],
+		"correct": "Parawanem można się zasłonić, a słoniem nie można się zaparawanić"
+	},
+	{
+		"text": "Co służy do siedzenia, spania i mycia zębów?",
+		"choices": ["Nie ma takiej rzeczy!", "Krzesło, łóżko oraz szczoteczka do mycia zębów", "Jest wiele takich rzeczy"],
+		"correct": "Krzesło, łóżko oraz szczoteczka do mycia zębów"
+	},
+	{
+		"text": "Co jest żółte i kopie?",
+		"choices": ["Ktoś kto kopie żółtą łopatą i jest ubrany na żółto", "Żółta koparka", "Żółty szpadel"],
+		"correct": "Żółta koparka"
+	},
+	{
+		"text": "Co jest szare i kopie?",
+		"choices": ["Cień koparki", "Szpadel", "Jakaś szara maszyna"],
+		"correct": "Cień koparki"
+	},
+	{
+		"text": "Kto jest synem/córką Twojego ojca, ale nie jest Twoim rodzeństwem?",
+		"choices": ["Adoptowany syn Taty", "Ty", "Taka osoba nie może istnieć!"],
+		"correct": "Ty"
+	},
+	{
+		"text": "Co mówi lustro do lustra?",
+		"choices": ["Lustra nie mówią...", "Przepraszam, odbiło mi się!", "Wyszczuplasz mnie"],
+		"correct": "Przepraszam, odbiło mi się!"
+	},
+	{
+		"text": "Jak nazywa się gazeta na wakacje?",
+		"choices": ["Czasopismo", "Wczasopismo", "Książka o wakacjach"],
+		"correct": "Wczasopismo"
+	},
+	{
+		"text": "Kiedy człowiek jest w domu bez głowy?",
+		"choices": ["Jak mu ją odetną", "Nigdy", "Jak wychyli ją przez okno"],
+		"correct": "Jak wychyli ją przez okno"
+	},
+	{
+		"text": "Jakie polskie słowo pisze się inaczej, a mówi się inaczej?",
+		"choices": ["Jest mnóstwo takich słów", "Inaczej", "Nie ma takiego słowa"],
+		"correct": "Inaczej"
+	},
+	{
+		"text": "Co rośnie do góry korzeniem?",
+		"choices": ["Zaczarowane drzewo", "Jakieś chwasty", "Ząb"],
+		"correct": "Ząb"
+	},
+	{
+		"text": "Co to jest: im więcej tego w tym jest, tym mniej waży.",
+		"choices": ["Dziury w serze", "Lekkość w powietrzu", "Takiego czegoś nie ma"],
+		"correct": "Dziury w serze"
+	},
+	{
+		"text": "Jak kozioł przeskakuje przez rzekę?",
+		"choices": ["Wysoko", "Tak jak koza", "Z łbem w dół"],
+		"correct": "Tak jak koza"
+	},
+	{
+		"text": "Jakim językiem najczęściej mówią ludzie?",
+		"choices": ["Hiszpańskim", "Mokrym i zaślinionym", "Francuskim"],
+		"correct": "Mokrym i zaślinionym"
+	},
+	{
+		"text": "Czym się je? Rękami czy rękoma?",
+		"choices": ["Rękami", "Rękoma", "Ustami"],
+		"correct": "Ustami"
+	},
+	{
+		"text": "Co to antylopa?",
+		"choices": ["Przeciwieństwo lopy", "Zwierzę", "Nie istnieje coś takiego"],
+		"correct": "Przeciwieństwo lopy"
+	},
+	{
+		"text": "Ile zwierząt Mojżesz zabrał na arkę?",
+		"choices": ["Nie wiadomo", "Około 30", "Mojżesz nie miał arki"],
+		"correct": "Mojżesz nie miał arki"
+	},
+	{
+		"text": "Jakich kamieni w morzu jest najwięcej?",
+		"choices": ["Jasnych", "Bursztynów", "Mokrych"],
+		"correct": "Mokrych"
+	},
+	{
+		"text": "W jakiej wodzie ryby nie pływają?",
+		"choices": ["Słonej", "Słodkiej", "Gotowanej"],
+		"correct": "Gotowanej"
+	},
+	{
+		"text": "Jaka ryba jest najkrótsza?",
+		"choices": ["Płotka", "Ta, która ma łeb najbliżej ogona.", "Rekin"],
+		"correct": "Ta, która ma łeb najbliżej ogona."
+	},
+	{
+		"text": "Jak wyleczyć się z miłości od pierwszego wejrzenia?",
+		"choices": ["A po co się leczyć?", "Spojrzeć drugi raz", "Miłość od pierwszego wejrzenia nie istnieje"],
+		"correct": "Spojrzeć drugi raz"
+	},
+	{
+		"text": "Jaki jest najlepszy środek na łysienie?",
+		"choices": ["Nie ma skutecznego środka", "Maść na porost włosów", "Środek głowy"],
+		"correct": "Środek głowy"
+	},
+	{
+		"text": "Jak wygląda król z bykiem?",
+		"choices": ["Ma rogi", "Dziwnie", "Krul"],
+		"correct": "Krul"
+	},
+	{
+		"text": "Co powiedziała ściana do ściany?",
+		"choices": ["Masz nierówno pod sufitem", "Cześć", "Spotkamy się na rogu"],
+		"correct": "Spotkamy się na rogu"
+	},
+	{
+		"text": "Co ma wspólnego łyżeczka z jesienią?",
+		"choices": ["Nic", "Je się nią", "Ma ładny kolor"],
+		"correct": "Je się nią"
+	},
+	{
+		"text": "Kiedy człowiek ma tyle oczu, ile dni w roku?",
+		"choices": ["To niemożliwe", "Drugiego stycznia", "Piątego grudnia"],
+		"correct": "Drugiego stycznia"
+	},
+	{
+		"text": "Dlaczego bocian stoi na jednej nodze?",
+		"choices": ["Bo gdyby ją podniósł, to by upadł", "Bo tak mu wygodnie", "Bo nie ma drugiej"],
+		"correct": "Bo gdyby ją podniósł, to by upadł"
+	},
+	{
+		"text": "Gdzie podpisano traktat wersalski?",
+		"choices": ["W Wersalu", "W Paryżu", "U dołu pod tekstem"],
+		"correct": "U dołu pod tekstem"
+	},
+	{
+		"text": "Jaka jest najlepsza szkoła?",
+		"choices": ["Szkoła życia", "Prywatna", "Zamknięta"],
+		"correct": "Zamknięta"
+	},
+	{
+		"text": "W jaki sposób witają się papieże?",
+		"choices": ["Uściskiem dłoni", "Pocałunkiem w policzek", "Jest tylko jeden papież"],
+		"correct": "Jest tylko jeden papież"
+	},
+	{
+		"text": "Baran stoi na granicy polsko-czeskiej. Czyje będzie mleko?",
+		"choices": ["Polskie", "Czeskie", "Barany nie dają mleka"],
+		"correct": "Barany nie dają mleka"
+	},
+	{
+		"text": "W pokoju stoi lampa naftowa i świeca. Co najpierw zapalisz?",
+		"choices": ["Zapałkę", "Lampę", "Świecę"],
+		"correct": "Zapałkę"
+	},
+	{
+		"text": "Na jakiej trąbie nie można zagrać?",
+		"choices": ["Dętej blaszanej", "Słoniowej", "Powietrznej"],
+		"correct": "Powietrznej"
+	},
+	{
+		"text": "W którym miesiącu rodzi się najwięcej dzieci?",
+		"choices": ["W marcu", "W 9 miesiącu", "W piątym miesiącu"],
+		"correct": "W 9 miesiącu"
+	},
+	{
+		"text": "Co to jest autosugestia?",
+		"choices": ["Technika pracy z ograniczającymi przekonaniami", "To sugerowanie sobie, że ma się auto", "Wmawianie sobie czegoś, co nie istnieje"],
+		"correct": "To sugerowanie sobie, że ma się auto"
+	},
+	{
+		"text": "Jakie ryby najbardziej lubią lekarze i prawnicy? ",
+		"choices": ["Łososie", "Mintaje", "Duże sumy"],
+		"correct": "Duże sumy"
+	}
+ ]
+ 

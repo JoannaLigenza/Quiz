@@ -1,183 +1,158 @@
  [
 	{
-		"text": "Christmass 1 ?",
-		"choices": ["Black and Orange", "Purple and Orange", "Black and Purple", "Black and White"],
-		"correct": "Black and Orange"
+		"text": "Skąd na pewno nie pochodzi Święty Mikołaj?",
+		"choices": ["Z bieguna północnego", "Z Laponii", "Z bieguna południowego"],
+		"correct": "Z bieguna południowego"
 	},
 	{
-		"text": "Christmass 2?",
-		"choices": ["Red, Orange and White", "Red, Yellow and White", "Orange, Red and White", "Orange, Yellow and White"],
-		"correct": "Orange, Yellow and White"
+		"text": "Jaki tytuł nosi kolęda, której fragment brzmi: \"A słowo ciałem się stało i mieszkało między nami\" ?",
+		"choices": ["Przybieżeli do Betlejem", "Bóg się rodzi", "Pójdźmy wszyscy do stajenki"],
+		"correct": "Bóg się rodzi"
 	},
 	{
-		"text": "Christmass 3 ?",
-		"choices": ["Freddy Kruger", "Jason Vorhees", "Michael Myers", "Dracula"],
-		"correct": "Michael Myers"
+		"text": "Z jakiego kraju przywędrowała do nas tradycja strojenia choinki?",
+		"choices": ["Z Kanady", "Z Niemiec", "Z Francji"],
+		"correct": "Z Niemiec"
 	},
 	{
-		"text": "Christmass 4",
-		"choices": ["Freddy Kruger", "Edward Scissorhands", "Werewolf", "Dracula"],
-		"correct": "Freddy Kruger"
-	},
-	{
-		"text": "Christmass 5",
-		"choices": ["Robert Englund", "Robert Carlyle", "Robert Duvall", "Johnny Depp"],
-		"correct": "Robert Englund"
-	},
-	{
-		"text": "Christmass 6",
-		"choices": ["Wes Craven", "H. P. Lovecraft", "John Carpenter", "George A. Romero"],
-		"correct": "Wes Craven"
-	},
-	{
-		"text": "Christmass 7 ?",
-		"choices": ["1978", "1968", "1984", "1970"],
-		"correct": "1978"
-	},
-	{
-		"text": "Christmass 8 ?",
-		"choices": ["12", "11", "13", "10"],
-		"correct": "12"
-	},
-	{
-		"text": "Christmass  9 ?",
-		"choices": ["10", "11", "8", "9"],
-		"correct": "10"
-	},
-	{
-		"text": "Christmass 10 ?",
-		"choices": ["10", "11", "8", "9"],
+		"text": "Ile reniferów ciągnie sanie świętego Mikołaja?",
+		"choices": ["12", "15", "9"],
 		"correct": "9"
 	},
 	{
-		"text": "Christmass 11",
-		"choices": ["Regan MacNeil", "Laurie Strode", "Valerie Lewton", "Rose Byrne"],
-		"correct": "Regan MacNeil"
+		"text": "Według bożonarodzeniowego przesądu w Wigilię nie można:",
+		"choices": ["Niczego pożyczać", "Sprzątać", "Nic jeść aż do kolacji"],
+		"correct": "Niczego pożyczać"
 	},
 	{
-		"text": "Christmass 12 ?",
-		"choices": ["Turnips", "Pumpkins", "Potatos", "Watermelons"],
-		"correct": "Turnips"
+		"text": "Jak nazywa się świecki odpowiednik Świętego Mikołaja, rozdający prezenty m.in. rosyjskim dzieciom?",
+		"choices": ["Gwiazdor", "Dziadek Mróz", "Pan z workiem"],
+		"correct": "Dziadek Mróz"
 	},
 	{
-		"text": "Christmass 13 ?",
-		"choices": ["Mary Shelley", "Mary Wollstonecraft", "Percy Shelley", "Bram Stroker"],
-		"correct": "Mary Shelley"
+		"text": "Czego symbolem jest opłatek?",
+		"choices": ["Ciała i krwi Jezusa Chrystusa", "Zdrowia, szczęścia i spełnienia marzeń", "Pojednania, przebaczenia, jedności i miłości"],
+		"correct": "Pojednania, przebaczenia, jedności i miłości"
 	},
 	{
-		"text": "Christmass 14 ?",
-		"choices": ["Vlad the Impaler", "Attila the Hun", "Mehmed the Conqueror", "Ivan the Terrible"],
-		"correct": "Vlad the Impaler"
+		"text": "Jak nazywa się tradycyjna potrawa Wigilijna przygotowywana z pszenicy, maku, słodu, miodu, bakalii i innych dodatków ?",
+		"choices": ["Kutia", "Bryndza", "Maca"],
+		"correct": "Kutia"
 	},
 	{
-		"text": " Christmass 15  ?",
-		"choices": ["Romania", "Bulgaria", "Slovakia", "Russia"],
-		"correct": "Romania"
+		"text": "Jak nazywa się uroczysta msza święta odprawiana w nocy z 24 na 25 grudnia?",
+		"choices": ["Roraty", "Pasterka", "Pascha"],
+		"correct": "Pasterka"
 	},
 	{
-		"text": "Christmass 16 ?",
-		"choices": ["Central America", "Central Asia", "Ireland", "Australia"],
-		"correct": "Central America"
+		"text": "Jak nazywał się bohater \"Opowieści Wigilijnej\" Karola Dickensa, który w noc wigilijną przeszedł głęboką przemianę duchową?",
+		"choices": ["Ebenezer Scrooge", "Bob Cratchit", "Jakub Marley"],
+		"correct": "Ebenezer Scrooge"
 	},
 	{
-		"text": "Christmass 1 7 ?",
-		"choices": ["Samhain", "Hop-tu-Naa", "Calan Gaeaf", "Allantide"],
-		"correct": "Samhain"
+		"text": "Którego dnia świętujemy narodziny Jezusa?",
+		"choices": ["24 grudnia", "25 grudnia", "26 grudnia"],
+		"correct": "25 grudnia"
 	},
 	{
-		"text": "Christmass 18 ?",
-		"choices": ["David Bowie", "Sting", "Rob Zombie", "Marilyn Manson"],
-		"correct": "Rob Zombie"
+		"text": "W jakim mieście narodził się Jezus Chrystus?",
+		"choices": ["W Jerozolimie", "W Nazarecie", "W Betlejem"],
+		"correct": "W Betlejem"
 	},
 	{
-		"text": "Christmass 19 ?",
-		"choices": ["Dr. Van Helsing", "Dr. Loomis", "Dr. Frankenstein", "Dr. Brackett"],
-		"correct": "Dr. Loomis"
+		"text": "Jaki zespół wykonuje popularną w czasie świąt piosenkę \"Last Christmas\" ?",
+		"choices": ["Wham!", "Take That", "The Wanted"],
+		"correct": "Wham!"
 	},
 	{
-		"text": "Christmass 20?",
-		"choices": ["Linda Hamilton", "Jamie Lee Curtis", "Sharon Stone", "Glenn Close"],
-		"correct": "Jamie Lee Curtis"
+		"text": "Czym jest mirra (jeden z darów, jakie otrzymał Jezus od Trzech Króli) ?",
+		"choices": ["Drogocennym materiałem, z którego tkano szaty dla cesarzy rzymskich", "Przyprawą stosowaną w tradycyjnej kuchni żydowskiej", "Wonną żywicą otrzymywaną z drzew  i krzewów należących do rodzaju balsamowiec"],
+		"correct": "Wonną żywicą otrzymywaną z drzew  i krzewów należących do rodzaju balsamowiec"
 	},
 	{
-		"text": "Christmass 21 ?",
-		"choices": ["The Grove Field Facility", "The Jung Institution", "Smith Grove Sanatorium", "The Smith-Hoover Hospital"],
-		"correct": "Smith Grove Sanatorium"
+		"text": "Co tradycyjnie kładziemy pod obrusem na stole wigilijnym?",
+		"choices": ["Jemioła", "Sianko", "Opłatek"],
+		"correct": "Sianko"
 	},
 	{
-		"text": "Christmass 22",
-		"choices": ["Crystal Lake", "Springwood", "Haddonfield", "Amityville"],
-		"correct": "Haddonfield"
+		"text": "Jak nazywa się pierwszy i najważniejszy renifer Mikołaja, ten z charakterystycznym czerwonym nosem?",
+		"choices": ["Randalf", "Gandalf", "Rudolf"],
+		"correct": "Rudolf"
 	},
 	{
-		"text": "Christmass 23",
-		"choices": ["John Carpenter", "Wes Craven", "Ridley Scott", "Stephen Spielberg"],
-		"correct": "John Carpenter"
+		"text": "Co łamiemy między sobą, składając życzenia świąteczne?",
+		"choices": ["Pierniki", "Opłatki", "Krakersy"],
+		"correct": "Opłatki"
 	},
 	{
-		"text": "Christmass 24",
-		"choices": ["Half eagle half lion", "Half man half lion", "Half lion half snake", "Half eagle half horse"],
-		"correct": "Half eagle half lion"
+		"text": "Co tradycyjnie stawiamy na samej górze choinki?",
+		"choices": ["Szyszkę", "Świeczkę", "Gwiazdkę"],
+		"correct": "Gwiazdkę"
 	},
 	{
-		"text": "Christmass 25",
-		"choices": ["Samara", "Tamara", "Sonya", "Tanya"],
-		"correct": "Samara"
+		"text": "Co zwykle śpiewamy w czasie świąt?",
+		"choices": ["Szanty", "Kolędy", "Kołysanki"],
+		"correct": "Kolędy"
 	},
 	{
-		"text": "Christmass 26",
-		"choices": ["Starburst", "Life Savers", "Skittles", "Mojos"],
-		"correct": "Skittles"
+		"text": "Czego NIE zjemy na wigilijnej kolacji?",
+		"choices": ["Śledź", "Kotlet schabowy", "Barszcz"],
+		"correct": "Kotlet schabowy"
 	},
 	{
-		"text": "Christmass 27",
-		"choices": ["Germany", "America", "Austria", "France"],
-		"correct": "Austria"
+		"text": "Przez co zwykł wchodzić do domu Mikołaj, gdy chce zostawić nam prezent?",
+		"choices": ["Komin", "Okno", "Drzwi"],
+		"correct": "Komin"
 	},
 	{
-		"text": "Christmass 28",
-		"choices": ["Tootsie Rolls", "Rockets", "Candy corns", "Starbursts"],
-		"correct": "Tootsie Rolls"
+		"text": "Na jaki znak czekamy, by rozpocząć kolację wigilijną?",
+		"choices": ["Kometa na niebie", "Wieczorynka w teewizji", "Pierwsza gwiazdka na niebie"],
+		"correct": "Pierwsza gwiazdka na niebie"
 	},
 	{
-		"text": "Christmass 29",
-		"choices": ["Gobstoppers", "Malt Balls", "Fizz Bombs", "Rockets"],
-		"correct": "Gobstoppers"
+		"text": "Która z wymienionych osób była jedną z trzech króli?",
+		"choices": ["Melchior", "Jeremi", "Bartolomeusz"],
+		"correct": "Melchior"
 	},
 	{
-		"text": "Christmass 30",
-		"choices": ["The Shining", "Scream", "When a Stranger Calls", "The Mist"],
-		"correct": "When a Stranger Calls"
+		"text": "Jaką nazwę nosi czas, w którym przygotowujemy się do Świąt Bożego Narodzenia?",
+		"choices": ["Wielki post", "Adwent", "Ostatki"],
+		"correct": "Adwent"
 	},
 	{
-		"text": "Christmass 31",
-		"choices": ["Christine", "Cujo", "Carrie", "Rosemary's Baby"],
-		"correct": "Cujo"
+		"text": "Co jest symbolem Świąt?",
+		"choices": ["Dąb", "Sosna", "Choinka"],
+		"correct": "Choinka"
 	},
 	{
-		"text": "Christmass 32",
-		"choices": ["Nightmare on Elm Street", "Friday the 13th", "Halloween", "The Amityville Horror"],
-		"correct": "Friday the 13th"
+		"text": "Jak nazywa się dzień poprzedzający Boże Narodzenie?",
+		"choices": ["Wielka środa", "Tłusty czwartek", "Wigila"],
+		"correct": "Wigila"
 	},
 	{
-		"text": "Christmass 33",
-		"choices": ["Her future husband", "Her death", "Her mother", "Her guardian angel"],
-		"correct": "Her future husband"
+		"text": "Kto, w wigilię Bożego Narodzenia, przynosi prezenty na Górnym Śląsku?",
+		"choices": ["Święty Mikołaj", "Dzieciątko", "Gwiazdor"],
+		"correct": "Dzieciątko"
 	},
 	{
-		"text": "Christmass 34",
-		"choices": ["Night of the Living Dead", "Day of the Dead", "Dawn of the Dead", "They Live"],
-		"correct": "Night of the Living Dead"
+		"text": "Co znajdują pod choinką niegrzeczne dzieci?",
+		"choices": ["Miotłę", "Rózgę", "Nic"],
+		"correct": "Rózgę"
 	},
 	{
-		"text": "Christmass 35",
-		"choices": ["America", "England", "Scotland", "Ireland"],
-		"correct": "Ireland"
+		"text": "Jaka ryba jest najpopularniejsza na wigilijnym stole?",
+		"choices": ["Karp", "Łosoś", "Szprotka"],
+		"correct": "Karp"
 	},
 	{
-		"text": "Christmass 36",
-		"choices": ["Paraskavedekatriaphobia", "Samhainophobia", "Triskaidekaphobia", "Wiccaphobia"],
-		"correct": "Paraskavedekatriaphobia"
+		"text": "Po co zostawiamy dodatkowe nakrycie przy stole?",
+		"choices": ["Żeby nie musieć chodzić tyle razy do kuchni", "Żeby wrzucić na nie resztki jedzenia dla psa", "Dla niespodziewanego gościa"],
+		"correct": "Dla niespodziewanego gościa"
+	},
+	{
+		"text": "Jaka jest najpopularniejsza kolęda na świecie?",
+		"choices": ["Cicha noc", "Dzisiaj w Betlejem", "Carrie", "Pójdźmy wszyscy do stajenki"],
+		"correct": "Cicha noc"
 	}
  ]
  
