@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="style.css"/>
 		<script src="halloween.json"></script>
 		<script src="christmass.json"></script>
+		<script src="funny.json"></script>
 		<script src="script.js"></script> 
     </head>
     <body> 
@@ -18,15 +19,16 @@
 
 					<h2>Quiz </h2>
 					<p> Wrote your name and choose quiz category.<br>
-						Answer to 20 questions and check your score :)  
+						Answer to 10 questions and check your score :)  
 					</p>
 					<form>
-						What's your name? <br>
-						<input type="text" id="name" value="" maxlength="20"><br><br>
-						Choose category: <br>
+						<label for="name"> What's your name? </label> <br>
+						<input type="text" id="name" value="" maxlength="20" placeholder=""><br><br>
+						<label for="category"> Choose category: </label><br>
 						<select id="category">
 							  <option value="halloween">Halloween</option>
 							  <option value="christmass">Christmass</option>
+							  <option value="funny">Funny</option>
 						</select> <br><br>
 						<button type="button" name="next" id="button">Next</button><br><br>
 					</form>

@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	const hello_card = document.getElementById("hello");
 	const next_button_in_hello_card = document.getElementById("button");
 	const next_button_in_question_card = document.getElementsByClassName("button");
-	const questions_number = 5;
+	const questions_number = 10;
 	const score = [];	 
 	
 	const start_quiz = {
@@ -32,6 +32,10 @@ document.addEventListener('DOMContentLoaded', function() {
 		change_card: function() {
 			next_button_in_hello_card.addEventListener("click", function() {
 				const read_category = start_quiz.get_category();
+				if (name.value == "" || name.value.length < 3) {
+					name.classList.add("wrong_name");
+					return;
+				}
 				solve_quiz.read_status_and_parse_json(read_category);
 				active.nextElementSibling.classList.add("active");
 				active.classList.remove("active");
@@ -44,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 		read_status_and_parse_json: function(read_category) { 
 			var xmlhttp = new XMLHttpRequest();
-			xmlhttp.onreadystatechange = function() {
+			xmlhttp.onreadystatechange = function() {					// lub  xmlhttp.addEventListener('readystatechange', function() { }
 				if (this.readyState == 4 && this.status == 200) {
 					var myObj = JSON.parse(this.responseText);
 					solve_quiz.add_questions_and_answers(myObj);
@@ -73,6 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
 				check_answer_button.classList.add("check-answer-button");
 				check_answer_button.id = i;
 				paragraph.classList.add("answers-paragraph");
+				header.classList.add("answers-header");
 				header.innerText = arr[number_of_question].text
 				cards[i].appendChild(header);
 				cards[i].appendChild(paragraph);
@@ -182,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			score_card.id = "score";
 			score_card.classList.add("card");
 			content.appendChild(score_card);
-			return score_card
+			//return score_card
 		},
 		
 		add_score_to_score_card: function(score) {
@@ -190,10 +195,26 @@ document.addEventListener('DOMContentLoaded', function() {
 			const get_score_card = document.getElementById("score");
 			const score_div = document.createElement("div");
 			const score_header = document.createElement("h2");
+			score_header.id = "score_header";
 			score_div.id = "score_div";
 			score_header.innerText = set_name + ", your score: " + score.length + " / " + all_question_cards.length;
 			get_score_card.appendChild(score_div);
 			score_div.appendChild(score_header);
+			this.add_play_again_button(get_score_card)
+		},
+		
+		add_play_again_button: function(get_score_card) {
+			const play_again_button = document.createElement("button");
+			play_again_button.classList.add("end-button");
+			play_again_button.innerText = "Another Quiz";
+			get_score_card.appendChild(play_again_button);
+			this.refresh_screen(play_again_button)
+		},
+		
+		refresh_screen: function(play_again_button) {
+			play_again_button.addEventListener("click", function() {
+				location.reload();
+			} )
 		}
 	}
 	
