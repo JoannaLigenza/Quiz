@@ -82,18 +82,20 @@ document.addEventListener('DOMContentLoaded', function() {
 				cards[i].appendChild(header);
 				cards[i].appendChild(paragraph);
 				paragraph.appendChild(ul_list);
-				for (let i=0; i < arr[number_of_question].choices.length; i++) {
+				for (let j=0; j < arr[number_of_question].choices.length; j++) {
 					const li = document.createElement("li");
 					const label = document.createElement("label");
 					const answer = document.createElement("input");
 					answer.type = "radio";
 					answer.name = "answer";
-					answer.id = i;
-					const for_label = label.setAttribute("for", i);
-					label.innerText = arr[number_of_question].choices[i];
+					const id = i.toString()+j.toString();
+					answer.id = id
+					const for_label = label.setAttribute("for", id);
+					label.innerText = arr[number_of_question].choices[j];
 					ul_list.appendChild(li);
+					li.appendChild(answer);
 					li.appendChild(label);
-					label.insertBefore(answer, label.childNodes[0]);
+					//label.insertBefore(answer, label.childNodes[0]); //lub li.appendChild(answer);
 					card_list_elements.push(li);
 					card_inputs.push(answer);
 				}
@@ -131,23 +133,23 @@ document.addEventListener('DOMContentLoaded', function() {
 				check_answer_button.addEventListener("click", function(e) {
 					const all_checkbox = [];
 					for (i=0; i < list_element.length; i++) {
-						if (list_element[i].childNodes[0].childNodes[0].checked && list_element[i].childNodes[0].innerText == question.correct) {	
+						if (list_element[i].childNodes[0].checked && list_element[i].childNodes[1].innerText == question.correct) {	
 							list_element[i].classList.add("correct_answer");				
 						}
-						if (list_element[i].childNodes[0].childNodes[0].checked && list_element[i].childNodes[0].innerText != question.correct) {	
+						if (list_element[i].childNodes[0].checked && list_element[i].childNodes[1].innerText != question.correct) {	
 							list_element[i].classList.add("bad_answer");
 						}
-						if (list_element[i].childNodes[0].childNodes[0].checked === false) {
+						if (list_element[i].childNodes[0].checked === false) {
 							all_checkbox.push(i);
 						}
 					}
 					// if none of answers is checked
-					if (all_checkbox.length == 4) {
+					if (all_checkbox.length == 3) {
 						return;
 					}
 					// block all answers and check_answer_button
 					for (i=0; i < list_element.length; i++) {
-						list_element[i].childNodes[0].childNodes[0].disabled = true;
+						list_element[i].childNodes[0].disabled = true;
 					}
 					check_answer_button.disabled = true;
 				} )
@@ -157,10 +159,10 @@ document.addEventListener('DOMContentLoaded', function() {
 			next_button.addEventListener("click", function(e) {
 				const all_checkbox = [];
 				for (i=0; i < list_element.length; i++) {
-					if (list_element[i].childNodes[0].childNodes[0].checked && list_element[i].childNodes[0].innerText == question.correct) {	
+					if (list_element[i].childNodes[0].checked && list_element[i].childNodes[1].innerText == question.correct) {	
 						score.push(1);					
 					}
-					if (list_element[i].childNodes[0].childNodes[0].checked === false) {
+					if (list_element[i].childNodes[0].checked === false) {
 						all_checkbox.push(i);
 					}
 				}
